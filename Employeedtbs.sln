@@ -1,0 +1,111 @@
+using System;
+namespace lab6
+{
+    class staff
+    {
+        public int code;
+        public string name;
+        public void method1(string n, int c)
+        {
+            name = n;
+            code = c;
+        }
+    }
+    class teacher : staff
+    {
+        string sub, publication;
+
+        public void method2(string s, string p)
+        {
+            sub = s;
+            publication = p;
+        }
+        public void display1()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Code: " + code);
+            Console.WriteLine("Subject: " + sub);
+            Console.WriteLine("Publication: " + publication);
+        }
+    }
+    class officer : staff
+    {
+        string grade;
+        public void method3(string g)
+        {
+            grade = g;
+        }
+        public void display3()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Code: " + code);
+            Console.WriteLine("Grade: " + grade);
+        }
+    }
+    class typist : staff
+    {
+        public double speed;
+        public void method4(double s)
+        {
+            speed = s;
+        }
+    }
+    class regular : typist
+    {
+        float wage;
+        public void method5(float w)
+        {
+            wage = w;
+        }
+        public void display5()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Code: " + code);
+            Console.WriteLine("Speed: " + speed);
+            Console.WriteLine("Wage: " + wage);
+        }
+    }
+    class casual : typist
+    {
+        float wage;
+        public void method6(float w)
+        {
+            wage = w;
+        }
+        public void display6()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Code: " + code);
+            Console.WriteLine("Speed: " + speed);
+            Console.WriteLine("Wage: " + wage);
+        }
+    }
+    class main
+    {
+        static void Main()
+        {
+            teacher a = new teacher();
+            officer b = new officer();
+            regular c = new regular();
+            casual d = new casual();
+            a.method1("Moin", 202);
+            a.method2("oop", "Let us C");
+            b.method1("Maaz", 291);
+            b.method3("21st");
+            c.method1("Moin", 169);
+            c.method4(140.1);
+            c.method5(20000);
+            d.method1("muhtashim", 201);
+            d.method4(151.6);
+            d.method6(25000);
+            Console.WriteLine("About Teacher: ");
+            a.display1();
+            Console.WriteLine("\nAbout Officer: ");
+            b.display3();
+            Console.WriteLine("\nAbout Regular Typist: ");
+            c.display5();
+            Console.WriteLine("\nAbout Casual Typist: ");
+            d.display6();
+        }
+    }
+}
